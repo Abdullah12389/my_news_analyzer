@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+    <h1 id="heading">Welcome to my Article Analyzer</h1>
+    <div class="search">
+        <form action="/show" method="post">
+            <input type="text" name="link" id="link" placeholder="Enter link of article">
+            <button type="submit" id="submit">Get Summary</button>
+        </form>
+    </div>
+    {%if not data %}
+    <p class="placeholder">Enter url to getinfo</p>
+    {%else%}
+        <h2>Title:</h2>
+        <p>{{data[0]}}</p>
+        <h2>Publish Date:</h2>
+        {%if data[1]!=none%}
+            <p>{{data[1]}}</p>
+        {%else%}
+            <p>Ambigous</p>    
+        {%endif%}    
+        <h2>Authors:</h2>
+        {%if not data[2] %}
+            <p>No authors mentioned</p>
+        {%else%}    
+            <p>{{data[2]}}</p>
+        {%endif%}    
+        <h2>Summary:</h2>
+        <p>{{data[3]}}</p>
+        <h2>KeyWords:</h2>
+        <p>{{data[4]}}</p>
+        <h2>Sentiment:</h2>
+        {%if data[5]>0 %}
+            <p>Positive Article</p>
+        {%elif data[5]<0 %} 
+            <p>Negative Article</p>
+        {%else%}
+            <p>Neutral Article</p>    
+        {%endif%}                
+        {%endif%}    
+</body>
+</html>

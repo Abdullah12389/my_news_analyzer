@@ -1,0 +1,29 @@
+body{
+    background-color: aqua;
+}
+#submit{
+    width: 100px;
+    height: 30px;
+    background-color: blue;
+    color: white;
+    font-size: 13px;
+    border-radius: 20px;
+}
+#heading{
+    text-align: center;
+}
+.search{
+    display: flex;
+    justify-content: center;
+}
+#link{
+    width:300px;
+    height:30px;
+}
+p{
+    font-size: 20px;
+}
+.placeholder{
+    text-align: center;
+    font-size: 100px;
+}
