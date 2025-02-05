@@ -2,6 +2,7 @@ from textblob import TextBlob
 from newspaper import Article
 import nltk
 from flask import Flask,render_template,request
+nltk.download("punkt_tab")
 app=Flask(__name__)
 @app.route("/",methods=['GET'])
 def search():
